@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.4.4.js" integrity="sha256-sxzQlK95ULOkYdx4Fh/S+vAfqp0O2MHAcnkPg6sm1II=" crossorigin="anonymous"></script>˙
+    <script>
+        $(document).ready(function () {
+
+            $("#payment-btn").click(function () {
+                console.log('on click');
+                $.ajax({
+                    type: "GET",
+                    crossDomain: true,
+                    url: "http://127.0.0.1:8080/pay-gate/gen-payment",
+                    data: {},
+                    success: function (res) {
+                        console.log(res);
+                        window.open(res, '_blank','width=600, height=700, top=50, left=50, scrollbars=yes, menubar=no');
+                    },
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <button id="payment-btn" >팝asdasdasdasdasd업 열기</button>
+
+</body>
+</html>
